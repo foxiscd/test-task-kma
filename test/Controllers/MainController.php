@@ -24,11 +24,11 @@ class MainController extends AbstractController
 
         $service = new ClickhouseClient();
 
-        $statistic = $service->select($query, [
+        $statistics = $service->select($query, [
             'minute', 'row_count', 'avg_length', 'first_message_time', 'last_message_time'
         ]);
 
-        $this->view->renderHtml('index.php', compact('statistic'));
+        $this->view->renderHtml('index.php', compact('statistics'));
     }
 
     /**

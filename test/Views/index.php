@@ -1,6 +1,6 @@
 <?php
 /**
- * @var null|array $statistic
+ * @var null|array $statistics
  */
 ?>
 
@@ -17,7 +17,7 @@
 <div>
     <a href="/start">Запустить</a>
     <br>
-    <?php if ($statistic): ?>
+    <?php if ($statistics): ?>
         <table>
             <thead>
             <tr>
@@ -29,13 +29,13 @@
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($statistic as $item): ?>
+            <?php foreach ($statistics as $statistic): ?>
                 <tr>
-                    <td><?= $item['minute'] ?></td>
-                    <td><?= $item['row_count'] ?></td>
-                    <td><?= $item['avg_length'] ?></td>
-                    <td><?= $item['first_message_time'] ?></td>
-                    <td><?= $item['last_message_time'] ?></td>
+                    <td><?= $statistic['minute'] ?></td>
+                    <td><?= $statistic['row_count'] ?></td>
+                    <td><?= $statistic['avg_length'] ?></td>
+                    <td><?= $statistic['first_message_time'] ?></td>
+                    <td><?= $statistic['last_message_time'] ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
