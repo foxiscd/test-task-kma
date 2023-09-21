@@ -73,7 +73,7 @@ services:
         CLICKHOUSE_VERSION: ${CLICKHOUSE_VERSION}
         CLICKHOUSE_USER: ${CLICKHOUSE_USER}
         CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
-    container_name: clickhouse
+    container_name: clickhouse-${SPACE_NAME}
     volumes:
       - ./clickhouse/data:/var/lib/clickhouse
     ports:
@@ -88,6 +88,7 @@ services:
       - backend
 
   rabbitmq:
+    container_name: rabbitmq-${SPACE_NAME}
     build: ./rabbitmq
     ports:
       - "5672:5672"

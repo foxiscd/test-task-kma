@@ -50,6 +50,7 @@ class QueueService
      */
     public function work(string $queueName): void
     {
+        $this->channel->queue_declare($queueName, false, true, false, false);
         $this->checkQueue($queueName);
 
         $this->channel->basic_consume(
